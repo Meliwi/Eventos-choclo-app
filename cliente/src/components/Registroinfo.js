@@ -39,10 +39,10 @@ export const Registroinfo = () => {
   };
   return (
     <div className="formdb__box-containter">
-      <h3 className="auth__title">Envio INFO</h3>
+      <h3 className="auth__title">Encuesta</h3>
       <form>
         <div className="pregunta_container">
-          <div className="pregunta">¿1.Qué tipo de comida prefiere?</div>
+          <div className="pregunta">1.¿Qué tipo de comida prefiere?</div>
           <div className="respuestas">
             <input type="checkbox" id="cbox2" value="second_checkbox" />{" "}
             <label for="cbox2">Comida rápida</label>
@@ -57,18 +57,12 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Repostería</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro: </label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
         </div>
         <div className="pregunta_container">
-          <div className="pregunta">¿2.Cual es tu género cinematográfico favorito?</div>
+          <div className="pregunta">2.¿Cual es tu género cinematográfico favorito?</div>
           <div className="respuestas">
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
             <label htmlFor="cbox2">Terror</label>
@@ -95,13 +89,7 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Comedia</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
 
@@ -133,14 +121,9 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Electrónica</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-                type="text"
-                name="documento"
-                value={documento}
-                autoComplete="off"
-                onChange={onChangedc}
-            />
-            <br/></div>
+            <label htmlFor="cbox2">Otro</label>
+            <br/>
+          </div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta">4.¿Cual es tu deporte favorito?</div>
@@ -173,13 +156,7 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Atletismo</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
         </div>
@@ -414,13 +391,7 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Feria artesanal</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
         </div>
@@ -446,13 +417,7 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Encontrar inspiración</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
         </div>
@@ -478,13 +443,7 @@ export const Registroinfo = () => {
             <label htmlFor="cbox2">Falta de tiempo</label>
             <br/>
             <input type="checkbox" id="cbox2" value="second_checkbox"/>{" "}
-            <label htmlFor="cbox2">Otro</label><input
-              type="text"
-              name="documento"
-              value={documento}
-              autoComplete="off"
-              onChange={onChangedc}
-          />
+            <label htmlFor="cbox2">Otro</label>
             <br/>
           </div>
         </div>
@@ -588,7 +547,7 @@ export const Registroinfo = () => {
           </div>
         </div>
         <button className="btn btn-primary" type="button" onClick={() => inserta()}>
-          enviar info
+          Enviar
         </button>
       </form>
     </div>
