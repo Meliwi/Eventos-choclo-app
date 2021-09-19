@@ -1,8 +1,9 @@
 import React from "react";
 import { useForm } from "../Hooks/useForm";
 
-export const Question = ({ question, options_values }) => {
+export const Question = ({ question, options_values, setRespuestas }) => {
   const { optionValue, handleChange } = useForm();
+  // setRespuestas((initialState) => [...initialState, optionValue]);
   return (
     <div className="question">
       <h3>{question}</h3>
@@ -15,8 +16,10 @@ export const Question = ({ question, options_values }) => {
                 value={option.name}
                 checked={optionValue === option.name}
                 onChange={handleChange}
+                id={key}
               />
               {"  " + option.name}
+              {/* {setRespuestas((initialState) => [initialState.flat(), option.name])} */}
             </label>
           </div>
         ))}
@@ -24,3 +27,5 @@ export const Question = ({ question, options_values }) => {
     </div>
   );
 };
+
+// export const respuesta = optionValue;

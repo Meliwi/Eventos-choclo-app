@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Question } from "./Question.js";
 
 const questions = [
@@ -27,6 +27,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 1,
@@ -69,6 +70,7 @@ const questions = [
         name: "Accion",
       },
     ],
+    answer: "",
   },
   {
     id: 2,
@@ -111,6 +113,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 3,
@@ -157,6 +160,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 4,
@@ -183,6 +187,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 5,
@@ -209,6 +214,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 6,
@@ -235,6 +241,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 7,
@@ -261,6 +268,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 8,
@@ -287,6 +295,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 9,
@@ -313,6 +322,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 10,
@@ -339,6 +349,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 11,
@@ -365,6 +376,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 12,
@@ -391,6 +403,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 13,
@@ -417,6 +430,7 @@ const questions = [
         name: "Nunca",
       },
     ],
+    answer: "",
   },
   {
     id: 14,
@@ -471,6 +485,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 15,
@@ -505,6 +520,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 16,
@@ -539,6 +555,7 @@ const questions = [
         name: "Otro",
       },
     ],
+    answer: "",
   },
   {
     id: 17,
@@ -569,6 +586,7 @@ const questions = [
         name: "Más de 100 mil pesos",
       },
     ],
+    answer: "",
   },
   {
     id: 18,
@@ -603,6 +621,7 @@ const questions = [
         name: "Domingo",
       },
     ],
+    answer: "",
   },
   {
     id: 19,
@@ -625,11 +644,13 @@ const questions = [
         name: "Madrugada",
       },
     ],
+    answer: "",
   },
   {
     id: 20,
     name: "21. Edad",
     opciones: [],
+    answer: "",
   },
   {
     id: 21,
@@ -656,20 +677,27 @@ const questions = [
         name: "Oriente",
       },
     ],
+    answer: "",
   },
 ];
 
 // const [respuestas, setRespuestas] = useState({});
-console.log(questions[20].opciones);
+// console.log(questions[20].opciones);
 
 export const Registroinfo = () => {
+  const [respuestas, setRespuestas] = useState([]);
   return (
     <div className="formdb__box-containter">
       <h3 className="auth__title">Envio INFO</h3>
-      <form>
+      <form className="main__form">
         {questions.map((question) => (
-          <Question question={question.name} options_values={question.opciones}></Question>
+          <Question
+            question={question.name}
+            options_values={question.opciones}
+            setRespuestas={setRespuestas}
+          ></Question>
         ))}
+        {console.log(respuestas)}
         {/* <Question question={questions[0].name} options_values={questions[0].opciones}></Question> */}
       </form>
       <button className="btn btn-primary" type="button">
