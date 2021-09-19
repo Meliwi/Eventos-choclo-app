@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "./Hooks/useForm";
+import { useForm } from "../Hooks/useForm";
 
 export const Question = ({ question, options_values }) => {
   const { optionValue, handleChange } = useForm();
