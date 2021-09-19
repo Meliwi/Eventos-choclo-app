@@ -43,93 +43,101 @@ export const Registroinfo = () => {
       <form>
         <div className="pregunta_container">
           <div className="pregunta">¿Qué tipo de comida prefiere?</div>
-          <div className="respuesta">
-            {/* <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br> */}
+          <div className="respuestas">
+            <input type="checkbox" id="cbox2" value="second_checkbox" />{" "}
+            <label for="cbox2">Este es mi segundo checkbox</label>
+            <br />
+            <input type="checkbox" id="cbox2" value="second_checkbox" />{" "}
+            <label for="cbox2">Este es mi segundo checkbox</label>
+            <br />
+            <input type="checkbox" id="cbox2" value="second_checkbox" />{" "}
+            <label for="cbox2">Este es mi segundo checkbox</label>
+            <br />
           </div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <div className="pregunta_container">
           <div className="pregunta"></div>
-          <div className="respuesta"></div>
+          <div className="respuestas"></div>
         </div>
         <input
           className="auth__input"
@@ -140,7 +148,6 @@ export const Registroinfo = () => {
           autoComplete="off"
           onChange={onChangedc}
         />
-
         <input
           className="auth__input"
           type="text"
@@ -159,7 +166,6 @@ export const Registroinfo = () => {
           onChange={onChangeap}
           autoComplete="off"
         />
-
         <button className="btn btn-primary" type="button" onClick={() => inserta()}>
           enviar info
         </button>
