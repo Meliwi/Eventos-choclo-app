@@ -559,24 +559,27 @@ export const Registroinfo = () => {
     });
   };
 
-  const [respuestas, setRespuestas] = useState([]);
   return (
     <div className="formdb__box-containter">
-      <h3 className="auth__title">Envio INFO</h3>
+      <h3 className="auth__title">
+        Investigación de mercado para medir el consumo cultural en la ciudad de
+        Cali
+      </h3>
+      <p className="obj__text">
+        El propósito de la siguiente encuesta es determinar el evento cultural
+        de mayor interés, sus respuestas serán valiosas para tomar decisiones
+        por lo que le rogamos objetividad.
+      </p>
       <form className="main__form">
-        {/* {questions.map((question) => (
-          <Question
-            question={question.name}
-            options_values={question.opciones}
-            setRespuestas={setRespuestas}
-          ></Question>
-        ))} */}
-        <div>
-          <h3>{"1. ¿Qué tipo de comida prefiere?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"1. ¿Qué tipo de comida prefiere?"}
+          </h3>
           {opciones1.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.comida_preferida === option.name}
@@ -586,14 +589,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"2. ¿Cual es tu género cinematográfico favorito?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"2. ¿Cual es tu género cinematográfico favorito?"}
+          </h3>
           {opciones2.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.genero_cine_fav === option.name}
@@ -603,14 +608,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"3. ¿Cual es tu género músical favorito?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"3. ¿Cual es tu género músical favorito?"}
+          </h3>
           {opciones3.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.genero_mus_fav === option.name}
@@ -620,14 +627,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"4. ¿Cual es tu deporte favorito?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"4. ¿Cual es tu deporte favorito?"}
+          </h3>
           {opciones4.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.deporte_favorito === option.name}
@@ -637,16 +646,18 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>
-            {"5. ¿Con qué frecuencia asistes o participas en eventos artísticos o culturales?"}
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {
+              "5. ¿Con qué frecuencia asistes o participas en eventos artísticos o culturales?"
+            }
           </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia5 === option.name}
@@ -656,10 +667,9 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
             {
               "6. ¿Con qué frecuencia asiste a conciertos, recitales, eventos, presentaciones o espectáculos de música en vivo, en espacios abiertos o cerrados?"
             }
@@ -668,6 +678,7 @@ export const Registroinfo = () => {
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia6 === option.name}
@@ -677,14 +688,18 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"7. ¿Con qué frecuencia asiste a ferias o exposiciones artesanales?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {
+              "7. ¿Con qué frecuencia asiste a ferias o exposiciones artesanales?"
+            }
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia7 === option.name}
@@ -694,14 +709,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"8. ¿Con qué frecuencia asiste a ferias de libros?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"8. ¿Con qué frecuencia asiste a ferias de libros?"}
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia8 === option.name}
@@ -711,14 +728,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"9. ¿Con qué frecuencia asistes a eventos deportivos?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"9. ¿Con qué frecuencia asistes a eventos deportivos?"}
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia9 === option.name}
@@ -728,14 +747,18 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"10. ¿Con qué frecuencia asiste a obras de teatro, de ópera o danza?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {
+              "10. ¿Con qué frecuencia asiste a obras de teatro, de ópera o danza?"
+            }
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia10 === option.name}
@@ -745,14 +768,18 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"11. ¿Con qué frecuencia asiste a festivales gastronómicos o de cocina?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {
+              "11. ¿Con qué frecuencia asiste a festivales gastronómicos o de cocina?"
+            }
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia11 === option.name}
@@ -762,10 +789,9 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
             {
               "12. ¿Con qué frecuencia asiste a ferias de diseño (moda, textil, joyas, de producto)?"
             }
@@ -774,6 +800,7 @@ export const Registroinfo = () => {
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia12 === option.name}
@@ -783,14 +810,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"13. ¿Con qué frecuencia asiste a carnavales?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"13. ¿Con qué frecuencia asiste a carnavales?"}
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia13 === option.name}
@@ -800,14 +829,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"14. ¿Con qué frecuencia asiste al cine?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"14. ¿Con qué frecuencia asiste al cine?"}
+          </h3>
           {frecuenciasValues.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_frecuencia14 === option.name}
@@ -817,14 +848,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"15. ¿A cuál de estos eventos preferiría asistir?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"15. ¿A cuál de estos eventos preferiría asistir?"}
+          </h3>
           {opciones15.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_evento_pref === option.name}
@@ -834,10 +867,9 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
             {
               "16. ¿Cuáles son los motivos por los que asistes o participas en eventos y actividades culturales?"
             }
@@ -846,6 +878,7 @@ export const Registroinfo = () => {
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_motivo_asistencia === option.name}
@@ -855,10 +888,9 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
             {
               "17. ¿Cuáles son las razones por las que no asistes o participas en más eventos artísticos o culturales?"
             }
@@ -867,6 +899,7 @@ export const Registroinfo = () => {
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_motivo_inasistencia === option.name}
@@ -876,14 +909,18 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"18. ¿Cuánto estaría dispuesto a pagar por la boleta de un evento cultural?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {
+              "18. ¿Cuánto estaría dispuesto a pagar por la boleta de un evento cultural?"
+            }
+          </h3>
           {opciones18.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_rango_pago === option.name}
@@ -893,14 +930,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"19. ¿En cuál día de la semana preferiría asistir a un evento?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"19. ¿En cuál día de la semana preferiría asistir a un evento?"}
+          </h3>
           {opciones19.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_dia_semana === option.name}
@@ -910,14 +949,16 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"20. ¿En cuál horario del día preferiría asistir a un evento?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"20. ¿En cuál horario del día preferiría asistir a un evento?"}
+          </h3>
           {opciones20.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.id_horario_dia === option.name}
@@ -927,12 +968,12 @@ export const Registroinfo = () => {
               </label>
             </div>
           ))}
-          {console.log(values)}
         </div>
-        <div>
-          <h3>{"21. Edad"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">{"21. Edad"}</h3>
           <div>
             <input
+              className="main__form-checkbox"
               type="number"
               name="Edad"
               id="Edad"
@@ -942,12 +983,15 @@ export const Registroinfo = () => {
           </div>
           {console.log(values)}
         </div>
-        <div>
-          <h3>{"22. ¿En qué parte de la ciudad reside?"}</h3>
+        <div className="main__form-question">
+          <h3 className="main__form-qtext">
+            {"22. ¿En qué parte de la ciudad reside?"}
+          </h3>
           {opciones22.map((option, key) => (
             <div key={key}>
               <label>
                 <input
+                  className="main__form-checkbox"
                   type="checkbox"
                   value={option.name}
                   checked={values.zona === option.name}
