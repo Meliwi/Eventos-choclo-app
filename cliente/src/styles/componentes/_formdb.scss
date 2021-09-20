@@ -87,3 +87,62 @@
   background-color: $primary;
   border-radius: 5px;
 }
+
+.submit__feedback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  background-color: #0b0b0b96;
+}
+
+.submit__modal-container {
+  position: relative;
+  z-index: 100;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1.5rem;
+  border-radius: 0.5rem;
+  width: 50%;
+  height: 5%;
+  margin: auto;
+  transform: translateY(100%);
+  background-color: white;
+}
+
+.submit__message {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.submit__close-button {
+  background-color: $primary;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0.8rem, -0.9rem);
+  margin: 0;
+  padding: 0;
+  border-radius: 0.3rem;
+  border: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+.sumbit__span {
+  width: 0.6rem;
+  height: 0.6rem;
+  padding: 0;
+  align-items: center;
+  margin: auto;
+  font-size: 22px;
+  color: white;
+}
