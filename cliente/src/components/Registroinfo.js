@@ -67,7 +67,7 @@ const questions = [
       },
       {
         id: 8,
-        name: "Accion",
+        name: "Otro",
       },
     ],
     answer: "",
@@ -697,6 +697,7 @@ export const Registroinfo = () => {
             setRespuestas={setRespuestas}
           ></Question>
         ))}
+
         {console.log(respuestas)}
         {/* <Question question={questions[0].name} options_values={questions[0].opciones}></Question> */}
       </form>

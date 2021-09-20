@@ -5,7 +5,7 @@ export const useForm = () => {
 
   const handleChange = (event) => {
     setOptionValue(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   return {
