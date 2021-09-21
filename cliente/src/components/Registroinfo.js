@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Question } from "./Question.js";
 
 const questions = [
@@ -685,7 +685,54 @@ const questions = [
 // console.log(questions[20].opciones);
 
 export const Registroinfo = () => {
-  const [respuestas, setRespuestas] = useState([]);
+  //Estado
+  let respuestas = {
+    comidaFav: "",
+    gen_cine_fav: "",
+    gen_musc_fav: "",
+    deporte_fav: "",
+    frecuencia5: "",
+    frecuencia6: "",
+    frecuencia7: "",
+    frecuencia8: "",
+    frecuencia9: "",
+    frecuencia10: "",
+    frecuencia11: "",
+    frecuencia12: "",
+    frecuencia13: "",
+    frecuencia14: "",
+    evento_fav: "",
+    motivos_asistir: "",
+    motivos_no_asistir: "",
+    rango_pago: "",
+    dia_preferido: "",
+    edad: "",
+    zona: "",
+  };
+  // const [respuestas, setRespuestas] = useState({
+  //   comidaFav: "",
+  //   gen_cine_fav: "",
+  //   gen_musc_fav: "",
+  //   deporte_fav: "",
+  //   frecuencia5: "",
+  //   frecuencia6: "",
+  //   frecuencia7: "",
+  //   frecuencia8: "",
+  //   frecuencia9: "",
+  //   frecuencia10: "",
+  //   frecuencia11: "",
+  //   frecuencia12: "",
+  //   frecuencia13: "",
+  //   frecuencia14: "",
+  //   evento_fav: "",
+  //   motivos_asistir: "",
+  //   motivos_no_asistir: "",
+  //   rango_pago: "",
+  //   dia_preferido: "",
+  //   edad: "",
+  //   zona: "",
+  // });
+
   return (
     <div className="formdb__box-containter">
       <h3 className="auth__title">Envio INFO</h3>
@@ -694,7 +741,8 @@ export const Registroinfo = () => {
           <Question
             question={question.name}
             options_values={question.opciones}
-            setRespuestas={setRespuestas}
+            // setRespuestas={setRespuestas}
+            respuestas={respuestas}
           ></Question>
         ))}
 

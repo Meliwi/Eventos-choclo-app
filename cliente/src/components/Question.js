@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "../Hooks/useForm";
 
-export const Question = ({ question, options_values, setRespuestas }) => {
+export const Question = ({ question, options_values, respuestas }) => {
   let { optionValue, handleChange } = useForm();
   console.log(optionValue);
   // useEffect(() => {
@@ -29,7 +29,7 @@ export const Question = ({ question, options_values, setRespuestas }) => {
                     onChange={handleChange}
                     onClick={(e) => {
                       e.target.value === option.name &&
-                        setRespuestas((initialState) => [...initialState, option.name]);
+                        (respuestas =);
                     }}
                   />
                   {"  " + option.name}
