@@ -35,118 +35,174 @@ export const Registroinfo = () => {
   });
 
   const guardabase = async () => {
-    try {
-      //Llamado a back (insertar datos del encuestado)
-      const res_persona = await axios.post("/database/insertarencuestado", {
-        edad: values.edad,
-        zona: values.zona,
-        deporte_favorito: values.deporte_favorito,
-        comida_preferida: values.comida_preferida,
-        genero_cine_fav: values.genero_cine_fav,
-        genero_mus_fav: values.genero_mus_fav,
-        id_horario_dia: values.id_horario_dia,
-        id_dia_semana: values.id_dia_semana,
-        id_evento_pref: values.id_evento_pref,
-        id_rango_pago: values.id_rango_pago,
-      });
-      console.log(res_persona.data);
-    } catch (error) {
-      setStateSubmit({
-        message: "Porfavor seleccione una opción para todas las preguntas",
-        type: "error",
-        state: true,
-      });
-    }
+    if (
+      values.edad !== "" &&
+      values.zona !== "" &&
+      values.deporte_favorito !== "" &&
+      values.comida_preferida !== "" &&
+      values.genero_cine_fav !== "" &&
+      values.genero_mus_fav !== "" &&
+      values.id_horario_dia !== "" &&
+      values.id_dia_semana !== "" &&
+      values.id_evento_pref !== "" &&
+      values.id_rango_pago !== "" &&
+      values.id_frecuencia5 !== "" &&
+      values.id_frecuencia6 !== "" &&
+      values.id_frecuencia7 !== "" &&
+      values.id_frecuencia8 !== "" &&
+      values.id_frecuencia9 !== "" &&
+      values.id_frecuencia10 !== "" &&
+      values.id_frecuencia11 !== "" &&
+      values.id_frecuencia12 !== "" &&
+      values.id_frecuencia13 !== "" &&
+      values.id_frecuencia14 !== "" &&
+      values.id_motivo_asistencia !== "" &&
+      values.id_motivo_inasistencia !== ""
+    ) {
+      try {
+        //Llamado a back (insertar datos del encuestado)
+        const res_persona = await axios.post("/database/insertarencuestado", {
+          edad: values.edad,
+          zona: values.zona,
+          deporte_favorito: values.deporte_favorito,
+          comida_preferida: values.comida_preferida,
+          genero_cine_fav: values.genero_cine_fav,
+          genero_mus_fav: values.genero_mus_fav,
+          id_horario_dia: values.id_horario_dia,
+          id_dia_semana: values.id_dia_semana,
+          id_evento_pref: values.id_evento_pref,
+          id_rango_pago: values.id_rango_pago,
+        });
+        console.log(res_persona.data);
+      } catch (error) {
+        setStateSubmit({
+          message: "Por favor seleccione una opción para todas las preguntas",
+          type: "error",
+          state: true,
+        });
+      }
+      try {
+        //Llamado a back (consultar id ultima persona registrada)
+        const res_id_persona = await axios.get("/database/consultaidpersona");
+        console.log(res_id_persona);
+        //Llamado a back (insertar frecuencia con la que asiste el encuestado a ciertos eventos)
+        const res_frec_evento = await axios.post(
+          "/database/insertarfrecuenciaeventos",
+          {
+            id_frecuencia5: values.id_frecuencia5,
+            id_frecuencia6: values.id_frecuencia6,
+            id_frecuencia7: values.id_frecuencia7,
+            id_frecuencia8: values.id_frecuencia8,
+            id_frecuencia9: values.id_frecuencia9,
+            id_frecuencia10: values.id_frecuencia10,
+            id_frecuencia11: values.id_frecuencia11,
+            id_frecuencia12: values.id_frecuencia12,
+            id_frecuencia13: values.id_frecuencia13,
+            id_frecuencia14: values.id_frecuencia14,
+          }
+        );
+        console.log(res_frec_evento);
+      } catch (error) {
+        setStateSubmit({
+          message: "Por favor seleccione una opción para todas las preguntas",
+          type: "error",
+          state: true,
+        });
+      }
 
-    try {
-      //Llamado a back (consultar id ultima persona registrada)
-      const res_id_persona = await axios.get("/database/consultaidpersona");
-      console.log(res_id_persona);
-      //Llamado a back (insertar frecuencia con la que asiste el encuestado a ciertos eventos)
-      const res_frec_evento = await axios.post(
-        "/database/insertarfrecuenciaeventos",
-        {
-          id_frecuencia5: values.id_frecuencia5,
-          id_frecuencia6: values.id_frecuencia6,
-          id_frecuencia7: values.id_frecuencia7,
-          id_frecuencia8: values.id_frecuencia8,
-          id_frecuencia9: values.id_frecuencia9,
-          id_frecuencia10: values.id_frecuencia10,
-          id_frecuencia11: values.id_frecuencia11,
-          id_frecuencia12: values.id_frecuencia12,
-          id_frecuencia13: values.id_frecuencia13,
-          id_frecuencia14: values.id_frecuencia14,
-        }
-      );
-      console.log(res_frec_evento);
-    } catch (error) {
-      setStateSubmit({
-        message: "Porfavor seleccione una opción para todas las preguntas",
-        type: "error",
-        state: true,
-      });
-    }
+      try {
+        //Llamado a back (insertar motivos de asistencia)
+        const res_motivo_asis = await axios.post(
+          "/database/insertarmotivoasistencia",
+          {
+            id_motivo_asistencia: values.id_motivo_asistencia,
+          }
+        );
+        console.log(res_motivo_asis);
+      } catch (error) {
+        setStateSubmit({
+          message: "Por favor seleccione una opción para todas las preguntas",
+          type: "error",
+          state: true,
+        });
+      }
 
-    try {
-      //Llamado a back (insertar motivos de asistencia)
-      const res_motivo_asis = await axios.post(
-        "/database/insertarmotivoasistencia",
-        {
-          id_motivo_asistencia: values.id_motivo_asistencia,
-        }
-      );
-      console.log(res_motivo_asis);
-    } catch (error) {
-      setStateSubmit({
-        message: "Porfavor seleccione una opción para todas las preguntas",
-        type: "error",
-        state: true,
-      });
-    }
+      try {
+        //Llamado a back (insertar motivos de inasistencia)
+        const res_motivo_inasis = await axios.post(
+          "/database/insertarmotivoinasistencia",
+          {
+            id_motivo_inasistencia: values.id_motivo_inasistencia,
+          }
+        );
+        console.log(res_motivo_inasis);
 
-    try {
-      //Llamado a back (insertar motivos de inasistencia)
-      const res_motivo_inasis = await axios.post(
-        "/database/insertarmotivoinasistencia",
-        {
-          id_motivo_inasistencia: values.id_motivo_inasistencia,
+        if (
+          values.edad !== "" &&
+          values.zona !== "" &&
+          values.deporte_favorito !== "" &&
+          values.comida_preferida !== "" &&
+          values.genero_cine_fav !== "" &&
+          values.genero_mus_fav !== "" &&
+          values.id_horario_dia !== "" &&
+          values.id_dia_semana !== "" &&
+          values.id_evento_pref !== "" &&
+          values.id_rango_pago !== "" &&
+          values.id_frecuencia5 !== "" &&
+          values.id_frecuencia6 !== "" &&
+          values.id_frecuencia7 !== "" &&
+          values.id_frecuencia8 !== "" &&
+          values.id_frecuencia9 !== "" &&
+          values.id_frecuencia10 !== "" &&
+          values.id_frecuencia11 !== "" &&
+          values.id_frecuencia12 !== "" &&
+          values.id_frecuencia13 !== "" &&
+          values.id_frecuencia14 !== "" &&
+          values.id_motivo_asistencia !== "" &&
+          values.id_motivo_inasistencia !== ""
+        ) {
+          setStateSubmit({
+            message:
+              "La información ha sido enviada correctamente. Muchas gracias!",
+            type: "submit",
+            state: true,
+          });
+          setValues({
+            ...values,
+            edad: "",
+            zona: "",
+            deporte_favorito: "",
+            comida_preferida: "",
+            genero_cine_fav: "",
+            genero_mus_fav: "",
+            id_horario_dia: "",
+            id_dia_semana: "",
+            id_evento_pref: "",
+            id_rango_pago: "",
+            id_frecuencia5: "",
+            id_frecuencia6: "",
+            id_frecuencia7: "",
+            id_frecuencia8: "",
+            id_frecuencia9: "",
+            id_frecuencia10: "",
+            id_frecuencia11: "",
+            id_frecuencia12: "",
+            id_frecuencia13: "",
+            id_frecuencia14: "",
+            id_motivo_asistencia: "",
+            id_motivo_inasistencia: "",
+          });
         }
-      );
-      console.log(res_motivo_inasis);
+      } catch (error) {
+        setStateSubmit({
+          message: "Por favor seleccione una opción para todas las preguntas",
+          type: "error",
+          state: true,
+        });
+      }
+    } else {
       setStateSubmit({
-        message:
-          "La información ha sido enviada correctamente. Muchas gracias!",
-        type: "submit",
-        state: true,
-      });
-      setValues({
-        ...values,
-        edad: "",
-        zona: "",
-        deporte_favorito: "",
-        comida_preferida: "",
-        genero_cine_fav: "",
-        genero_mus_fav: "",
-        id_horario_dia: "",
-        id_dia_semana: "",
-        id_evento_pref: "",
-        id_rango_pago: "",
-        id_frecuencia5: "",
-        id_frecuencia6: "",
-        id_frecuencia7: "",
-        id_frecuencia8: "",
-        id_frecuencia9: "",
-        id_frecuencia10: "",
-        id_frecuencia11: "",
-        id_frecuencia12: "",
-        id_frecuencia13: "",
-        id_frecuencia14: "",
-        id_motivo_asistencia: "",
-        id_motivo_inasistencia: "",
-      });
-    } catch (error) {
-      setStateSubmit({
-        message: "Porfavor seleccione una opción para todas las preguntas",
+        message: "Por favor seleccione una opción para todas las preguntas",
         type: "error",
         state: true,
       });
